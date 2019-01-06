@@ -5,6 +5,7 @@ import players from '../assets/players.json';
 class List extends Component {
     constructor(props){
     super(props)
+    this.renderItem = this.renderItem.bind(this);
     }
 
     static navigationOptions = {
@@ -26,7 +27,7 @@ class List extends Component {
                 <View>
                     <TouchableHighlight
                     onPress={handlePress}>
-                        <Text>{item.name}</Text>
+                        <Text>{item}</Text>
                     </TouchableHighlight>
                 </View>
         )
@@ -35,9 +36,11 @@ class List extends Component {
     render() {
         return (
             <FlatList
-                data={players}
+                data={this.props.players}
                 renderItem={this.renderItem}
+                keyExtractor={this.keyExtractor}
             />
         );
     }
 }
+export default List;
