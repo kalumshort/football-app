@@ -6,6 +6,7 @@ import { View, StyleSheet, Text, TouchableHighlight, FlatList} from 'react-nativ
 class HomeScreen extends Component {
     constructor(props){
         super(props);
+        this.onPressPlayers = this.onPressPlayers.bind(this);
     }
     static navigationOptions = {
         title: 'Home',
@@ -17,6 +18,10 @@ class HomeScreen extends Component {
     componentDidMount() {
 
     }
+    onPressPlayers() {
+        this.props.navigation.navigate('Players');
+
+    }
 
     render(){
         // const players = this.props;
@@ -24,7 +29,7 @@ class HomeScreen extends Component {
             <View style={styles.home} >
                 {/* <Text>Football Team Randomiser</Text> */}
                 <View style={styles.buttons}>
-                    <TouchableHighlight style={styles.button}>
+                    <TouchableHighlight style={styles.button} onPress={this.onPressPlayers}>
                         <Text style={styles.buttonText}>The Players</Text>
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.button}>
