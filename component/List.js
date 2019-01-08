@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableHighlight, FlatList } from 'react-native';
-import players from '../assets/players.json';
+
 
 class List extends Component {
     constructor(props){
@@ -25,9 +25,11 @@ class List extends Component {
         }
             return(
                 <View>
-                    <TouchableHighlight
-                    onPress={handlePress}>
-                        <Text>{item.name}</Text>
+                    <TouchableHighlight onPress={handlePress}>
+                        <>
+                            <Text>{item.name}</Text>
+                            <Text>{item.rating}</Text>
+                        </>
                     </TouchableHighlight>
                 </View>
         )
@@ -35,11 +37,14 @@ class List extends Component {
 
     render() {
         return (
+            <>
             <FlatList
                 data={this.props.players}
                 renderItem={this.renderItem}
                 keyExtractor={this.keyExtractor}
             />
+            </>
+
         );
     }
 }

@@ -4,9 +4,11 @@ import {
 } from 'react-navigation';
 
 import ListScreen from './container/listScreen.js';
+import HomeScreen from './container/homeScreen.js';
 
 const RootNavigator = createStackNavigator({
-    Home: ListScreen,
+    Home: HomeScreen,
+    Players: ListScreen,
 },{
     defaultNavigationOptions: {
         headerStyle: {

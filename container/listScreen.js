@@ -40,15 +40,15 @@ const mapStateToProps = ( state ) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getPlayers: () => {
-            dispatch(getPlayers());
-        }
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         getPlayers: () => {
+//             dispatch(getPlayers());
+//         }
+//     }
+// }
 
-const enhancer = connect(mapStateToProps, mapDispatchToProps);
+const enhancer = connect(mapStateToProps, null);
 const ListScreenConnected = enhancer(ListScreen);
 
 export default ListScreenConnected;
