@@ -20,13 +20,10 @@ class ListScreen extends Component {
     }
 
     render(){
-        // const players = this.props;
         return(
             <List
                 players={this.props.players}
             />
-            // <Text>{this.props.players[1]}</Text>
-            // <Text>{this.props.players[1]}</Text>
         )
     }
 

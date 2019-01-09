@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableHighlight, FlatList } from 'react-native';
+import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
 
 
 class List extends Component {
@@ -24,11 +24,11 @@ class List extends Component {
         this.props.onItemPress(item);
         }
             return(
-                <View>
-                    <TouchableHighlight onPress={handlePress}>
+                <View style={styles.listItem}>
+                    <TouchableHighlight onPress={handlePress} style={styles.listButton}>
                         <>
-                            <Text>{item.name}</Text>
-                            <Text>{item.rating}</Text>
+                            <Text style={styles.buttonText}>Name: {item.name}</Text>
+                            <Text style={styles.buttonText}>Rating: {item.rating}</Text>
                         </>
                     </TouchableHighlight>
                 </View>
@@ -49,3 +49,21 @@ class List extends Component {
     }
 }
 export default List;
+
+const styles = StyleSheet.create({
+    listItem:{
+        flex: 1,
+        alignItems: 'center',
+    },
+    listButton:{
+        flexDirection: 'row',
+        padding: 10,
+        backgroundColor: 'lightblue',
+        width: 300,
+        margin:5,
+        justifyContent: 'space-between',
+    },
+    buttonText: {
+
+    },
+})
