@@ -1,32 +1,11 @@
-import { getPlayers } from "./actions/state.js";
+import { getPlayers } from "./actions/state";
+import { addPlayer } from './actions/state';
 
-function reducer ( currentState, action ) {
-    switch(action.type) {
-
-        case 'getPlayers': {
-            return {
-            ...state,
-            players: players
-            };
-        }
-        default: {
-            return currentState;
-        }
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'addPlayer': return addPlayer(state, action);
+        default : return state;
     }
-    
-};
+}
 export default reducer;
 
-// export default (state, action) => {
-//     switch(action.type) {
-//         case 'getPlayers' : return getPlayers(state, action);
-//         default: return state;
-//     }
-// }
-
-// const getPlayers = (state, {players}) => {
-//     return {
-//         ...state,
-//         players: players,
-//     }
-// }

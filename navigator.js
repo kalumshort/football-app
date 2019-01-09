@@ -9,7 +9,7 @@ import TeamScreen from './container/teamScreen.js';
 import NewPlayerScreen from './container/newPlayerScreen.js';
 
 const RootNavigator = createStackNavigator({
-    Home: HomeScreen,
+    Home: ListScreen,
     Players: ListScreen,
     Teams: TeamScreen,
 },{

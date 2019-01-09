@@ -5,3 +5,10 @@ export const getPlayers = players => {
         players: players,
     }
 }
+
+export const addPlayer = data => {
+    return{
+        type: 'addPlayer',
+        input: data,
+    }
+};

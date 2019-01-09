@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import List from '../component/List';
 import {Text} from 'react-native';
 import { getPlayers } from '../data/actions/state.js';
+import NewPlayerInput from '../component/newPlayerInput';
+import { addPlayer } from '../data/actions/state';
 
 class ListScreen extends Component {
     constructor(props){
@@ -21,9 +23,12 @@ class ListScreen extends Component {
 
     render(){
         return(
+            <>
+            <NewPlayerInput/>
             <List
                 players={this.props.players}
             />
+            </>
         )
     }
 
@@ -33,19 +38,21 @@ class ListScreen extends Component {
 
 const mapStateToProps = ( state ) => {
     return {
-        players: state.players
+        players: state.players,
     }
-}
+};
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         getPlayers: () => {
-//             dispatch(getPlayers());
-//         }
-//     }
-// }
+const mapDispatchToProps = ( dispatch ) => {
+    return {
+        handleSubmit: data => {
+            dispatch(addPlayer(data))
+        }
+    }
+};
 
-const enhancer = connect(mapStateToProps, null);
+const enhancer = connect(mapStateToProps, mapDispatchToProps);
 const ListScreenConnected = enhancer(ListScreen);
 
-export default ListScreenConnected;
+// export default ListScreenConnected;
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListScreen);

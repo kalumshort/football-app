@@ -3,19 +3,42 @@ import {View, Text, TouchableHighlight, FlatList, StyleSheet, TextInput, Touchab
 
 
 class NewPlayerInput extends Component {
+   constructor(props){
+      super(props);
 
-    state = {
-       name: '',
-       rating: ''
-    }
+      this.state = {
+         input: "",
+      }
+
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleName = this.handleName.bind(this);
+
+
+   }
+
+   
     handleName = (text) => {
-       this.setState({ name: text })
+       this.setState({ input: text })
     }
-    handleRating = (text) => {
-       this.setState({ rating: text })
-    }
-    login = (email, pass) => {
-       alert('email: ' + email + ' password: ' + pass)
+   //  handleRating = (text) => {
+   //     this.setState({ rating: text })
+   //  }
+
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+         console.log('submitted');
+         console.log(this.props);
+
+        let data = this.state.name;
+
+        this.props.handleSubmit(data);
+
+      //   this.setState({
+      //       input: "",
+            
+      //   })
+
     }
     render() {
        return (
@@ -27,18 +50,16 @@ class NewPlayerInput extends Component {
                 autoCapitalize = "none"
                 onChangeText = {this.handleName}/>
              
-             <TextInput style = {styles.input}
+             {/* <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
                 placeholder = "Rating"
                 placeholderTextColor = "#9a73ef"
                 autoCapitalize = "none"
                 onChangeText = {this.handleRating}/>
-             
+              */}
              <TouchableOpacity
                 style = {styles.submitButton}
-                onPress = {
-                   () => this.login(this.state.email, this.state.password)
-                }>
+                onPress = { this.handleSubmit  }>
                 <Text style = {styles.submitButtonText}> Submit </Text>
              </TouchableOpacity>
           </View>

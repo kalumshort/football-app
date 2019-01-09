@@ -1,30 +1,34 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { View, StyleSheet, Text, TouchableHighlight, FlatList, TextInput} from 'react-native';
 import NewPlayerInput from '../component/newPlayerInput';
+import { addPlayer } from '../data/actions/state';
 
-class NewPlayerScreen extends Component {
-    constructor(props){
-        super(props)
+// class NewPlayer extends Component {
+//     constructor(props){
+//         super(props)
+//     }
+
+//     render(){
+//         return(
+//             <NewPlayerInput players={this.props.players}/>
+//         )
+//     }
+// }
+
+const mapStateToProps = ( state ) => {
+    return {
+        players: state.players,
     }
+};
 
-    static navigationOptions = {
-        title: 'New Player',
-        headerStyle:{
-            backgroundColor: 'green'
+const mapDispatchToProps = ( dispatch ) => {
+    return {
+        handleSubmit: data => {
+            dispatch(addPlayer(data))
         }
     }
+};
 
-    render(){
-        return(
-            
-            <NewPlayerInput/>
-            
-        );
-    }
-
-}
-
-export default NewPlayerScreen;
+export default connect(mapStateToProps, mapDispatchToProps)(NewPlayerInput);
 
 
