@@ -25,8 +25,8 @@ class NewPlayerInput extends Component {
    //  }
 
 
-    handleSubmit = (e) => {
-         e.preventDefault(e);
+    handleSubmit = () => {
+         // e.preventDefault(e);
          console.log('submitted');
          console.log(this.state.input);
 
@@ -34,8 +34,11 @@ class NewPlayerInput extends Component {
 
         this.props.handleSubmit(data);
 
+        console.log(data);
+
+
       //   this.setState({
-      //       input: ,
+      //       input: " ",
             
       //   })
 

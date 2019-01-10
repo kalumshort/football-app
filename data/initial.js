@@ -11,7 +11,17 @@
 // export default initialState;
 
 const initialState = {
-    players: [],
+    players: [
+        {
+            name: 'joe'
+        },
+        {
+            name: 'joe'
+        },
+        {
+            name: 'joe'
+        }
+    ],
     
 }
 

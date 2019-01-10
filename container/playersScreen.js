@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import List from '../container/listScreen';
-import {Text} from 'react-native';
-import { getPlayers } from '../data/actions/state.js';
-import NewPlayerInput from '../component/newPlayerInput';
-import { addPlayer } from '../data/actions/state';
-import Input from './input.js';
+import List from './listContainer';
+
+import Input from './inputContainer.js';
 
 class PlayerScreen extends Component {
     constructor(props){
@@ -18,10 +14,7 @@ class PlayerScreen extends Component {
         }
     }
 
-    componentDidMount() {
-        // this.props.getPlayers();
-    }
-
+  
     render(){
         return(
             <>

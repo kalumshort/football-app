@@ -1,14 +1,7 @@
 
-export const getPlayers = players => {
-    return {
-        type: "getPlayers",
-        players: players,
-    }
-}
-
-export const addPlayer = data => {
+export function addPlayer(data){
     return{
         type: 'addPlayer',
-        input: data,
-    }
-};
+        payload: data,
+    };
+}

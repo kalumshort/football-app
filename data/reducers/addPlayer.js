@@ -1,9 +1,14 @@
+let id = 0;
+
 export default (state, action) => {
+
+    id += 1;
+    
     return {
         ...state,
         players: [...state.players, {
-            name: action.input,
-            rating: 3,
+            id: id,
+            player: action.payload,
         }],
     }
 }
