@@ -1,10 +1,10 @@
 import { getPlayers } from "./actions/state";
 import { addPlayer } from './actions/state';
 
-// const reducer = (state, action) => {
+// function reducer (currentState, action){
 //     switch (action.type) {
-//         case 'addPlayer': return addPlayer(state, action);
-//         default : return state;
+//         case 'addPlayer': return addPlayer(currentState, action);
+//         default : return currentState;
 //     }
 // }
 
@@ -13,9 +13,9 @@ function reducer ( currentState, action ) {
         case 'addPlayer': {
             return {
                 ...currentState,
-                players: [...currentState.players,{
+                players: [{
                     name: action.payload
-                }]
+                },...currentState.players]
             }
         }
         default: {

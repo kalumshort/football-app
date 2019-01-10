@@ -1,14 +1,13 @@
 let id = 0;
 
-export default (state, action) => {
+export default (currentState, action) => {
 
     id += 1;
     
     return {
-        ...state,
-        players: [...state.players, {
-            id: id,
-            player: action.payload,
-        }],
+        ...currentState,
+        players: [...currentState.players,{
+            name: action.payload
+        }]
     }
 }
