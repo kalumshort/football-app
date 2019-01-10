@@ -11,22 +11,8 @@
 // export default initialState;
 
 const initialState = {
-    players: [
-        {
-            name: 'joe',
-            rating: 1,
-        },
-        {
-            name: 'ben',
-            rating: 2
-
-        },
-        {
-            name: 'tom',
-            rating: 3
-
-        }
-    ]
+    players: [],
+    
 }
 
 export default initialState;

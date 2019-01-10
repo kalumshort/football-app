@@ -3,6 +3,7 @@ export default (state, action) => {
         ...state,
         players: [...state.players, {
             name: action.input,
+            rating: 3,
         }],
     }
 }

@@ -26,16 +26,16 @@ class NewPlayerInput extends Component {
 
 
     handleSubmit = (e) => {
-        e.preventDefault();
+         e.preventDefault(e);
          console.log('submitted');
-         console.log(this.props);
+         console.log(this.state.input);
 
-        let data = this.state.name;
+        let data = this.state.input;
 
         this.props.handleSubmit(data);
 
       //   this.setState({
-      //       input: "",
+      //       input: ,
             
       //   })
 
@@ -47,6 +47,7 @@ class NewPlayerInput extends Component {
                 underlineColorAndroid = "transparent"
                 placeholder = "Name"
                 placeholderTextColor = "#9a73ef"
+               //  value = {this.props.input}
                 autoCapitalize = "none"
                 onChangeText = {this.handleName}/>
              

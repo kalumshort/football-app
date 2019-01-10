@@ -6,9 +6,10 @@ import {
 import ListScreen from './container/listScreen.js';
 import HomeScreen from './container/homeScreen.js';
 import TeamScreen from './container/teamScreen.js';
+import PlayersScreen from './container/playersScreen';
 
 const RootNavigator = createStackNavigator({
-    Home: ListScreen,
+    Home: PlayersScreen,
     Players: ListScreen,
     Teams: TeamScreen,
 },{

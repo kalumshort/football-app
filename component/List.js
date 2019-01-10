@@ -28,7 +28,7 @@ class List extends Component {
                     <TouchableHighlight onPress={handlePress} style={styles.listButton}>
                         <>
                             <Text style={styles.buttonText}>Name: {item.name}</Text>
-                            <Text style={styles.buttonText}>Rating: {item.rating}</Text>
+                            {/* <Text style={styles.buttonText}>Rating: {item.rating}</Text> */}
                         </>
                     </TouchableHighlight>
                 </View>
