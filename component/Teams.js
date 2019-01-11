@@ -94,29 +94,31 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     listButton:{
-        // flexDirection: 'row',
         padding: 10,
-        backgroundColor: 'grey',
+        backgroundColor: 'blue',
         width: 300,
         margin:5,
         justifyContent: 'space-between',
+        borderRadius: 12,
 
 
     },
     buttonText: {
         color: 'white',
-        fontWeight: '600',
+        fontWeight: 'bold',
         textAlign: 'center',
+        fontSize: 14,
 
     },
     TeamText: {
         textAlign: 'center',
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: 'lime',
         borderRadius: 20,
         backgroundColor: 'lime',
+        marginTop: 20,
         margin: 10,
+        padding: 8,
+        fontWeight: 'bold',
+        fontSize: 16,
         
     },
 })

@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     listButton:{
         flexDirection: 'row',
         padding: 10,
-        backgroundColor: 'aqua',
+        backgroundColor: 'blue',
         width: 300,
         margin:5,
         justifyContent: 'space-between',
