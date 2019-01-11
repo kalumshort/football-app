@@ -9,7 +9,7 @@ class NewPlayerInput extends Component {
       super(props);
 
       this.state = {
-         input: "",
+         text: '',
       }
 
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,9 +41,10 @@ class NewPlayerInput extends Component {
              <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
                 placeholder = "Insert Player Name "
-                placeholderTextColor = "#9a73ef"
+                placeholderTextColor = "blue"
                 autoCapitalize = "none"
                 onChangeText={(text) => this.setState({text})}
+                value={this.state.text}
 
                 />
              
@@ -75,7 +76,7 @@ class NewPlayerInput extends Component {
        height: 40,
        borderColor: 'lime',
        borderWidth: 2,
-       color: 'black',
+       color: 'blue',
     },
     submitButton: {
        backgroundColor: 'lime',
