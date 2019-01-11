@@ -30,7 +30,7 @@ class NewPlayerInput extends Component {
          console.log('submitted');
          console.log(this.state.input);
 
-        let data = this.state.input;
+        let data = this.state.input.toUpperCase();
 
         this.props.handleSubmit(data);
 

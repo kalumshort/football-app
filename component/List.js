@@ -41,9 +41,9 @@ class List extends Component {
                 <View style={styles.listItem}>
                     <TouchableHighlight  style={styles.listButton}>
                         <>
-                            <Text style={styles.buttonText}>Name: {item.name}</Text>
+                            <Text style={styles.buttonText}>{item.name}</Text>
                             {/* <Text style={styles.buttonText}>Rating: {item.rating}</Text> */}
-                            <Icon onPress={ this.handleDelete } name="close"></Icon>
+                            <Icon style={styles.icon} onPress={ this.handleDelete } name="close"></Icon>
                         </>
                     </TouchableHighlight>
                 </View>
@@ -79,6 +79,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     buttonText: {
-
+        textAlign: 'center',
+        fontSize: 17,
+        marginLeft: 21,
+    },
+    icon: {
+        fontSize: 22,
+        marginRight: 8,
     },
 })
