@@ -11,9 +11,9 @@ class PlayerScreen extends Component {
 
     }
     static navigationOptions = {
-        title: 'players',
+        title: 'The Players',
         headerStyle:{
-            backgroundColor: 'lightblue'
+            backgroundColor: 'lime'
         }
     }
 
@@ -49,31 +49,16 @@ const styles = StyleSheet.create({
        borderWidth: 1
     },
     submitButton: {
-       backgroundColor: '#7a42f4',
+       backgroundColor: 'lime',
        padding: 10,
        margin: 15,
        height: 40,
+       borderRadius: 10,
     },
     submitButtonText:{
-       color: 'white'
+       textAlign: 'center',
+       color: 'black',
+       fontWeight: 'bold',
     }
  })
 
-// const mapStateToProps = ( state ) => {
-//     return {
-//         players: state.players,
-//     }
-// };
-
-// // const mapDispatchToProps = dispatch  => ({
-// //         handleSubmit: data => {
-// //             dispatch(addPlayer(data))
-// //     }
-// // });
-
-// // const enhancer = connect(mapStateToProps, mapDispatchToProps);
-// // const ListScreenConnected = enhancer(ListScreen);
-
-// // export default ListScreenConnected;
-
-// export default connect(mapStateToProps, null)(ListScreen);

@@ -35,7 +35,7 @@ class NewPlayerInput extends Component {
           <View style = {styles.container}>
              <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
-                placeholder = "Name"
+                placeholder = "Insert Player Name "
                 placeholderTextColor = "#9a73ef"
                 autoCapitalize = "none"
                 onChangeText={(text) => this.setState({text})}
@@ -67,17 +67,20 @@ class NewPlayerInput extends Component {
     input: {
        margin: 15,
        height: 40,
-       borderColor: '#7a42f4',
-       borderWidth: 1
+       borderColor: 'lime',
+       borderWidth: 2,
+       color: 'black',
     },
     submitButton: {
-       backgroundColor: '#7a42f4',
+       backgroundColor: 'lime',
        padding: 10,
        margin: 15,
        height: 40,
+       borderRadius: 10,
     },
     submitButtonText:{
-       color: 'white',
+       color: 'black',
        textAlign: 'center',
+       fontWeight: 'bold',
     }
  })
