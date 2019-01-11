@@ -12,25 +12,16 @@ class List extends Component {
     this.handleDelete = this.handleDelete.bind(this);
     }
 
-    static navigationOptions = {
-        title: 'List',
-        headerStyle: {
-            backgroundColor: 'black'
-            }
-        }
-
     keyExtractor(item, index) {
         return `${index}`;
     }
 
     handleDelete = () => {
         console.log('deleted');
-        console.log(this.keyExtractor);
+        console.log(this.props.item.id);
 
-        // this.props.handleDelete(data);
-        // this.props.handleDelete(this.props.player.id)
+        // this.props.handleDelete(this.props.item.id)
 
-        
     }
 
     renderItem({item}) {

@@ -11,34 +11,21 @@ class NewPlayerInput extends Component {
       }
 
       this.handleSubmit = this.handleSubmit.bind(this);
-      this.handleName = this.handleName.bind(this);
-
 
    }
 
-   
-    handleName = (text) => {
-       this.setState({ input: text })
-    }
-   //  handleRating = (text) => {
-   //     this.setState({ rating: text })
-   //  }
-
 
     handleSubmit = () => {
-         // e.preventDefault(e);
-         console.log('submitted');
-         console.log(this.state.input);
-
-        let data = this.state.input.toUpperCase();
+        console.log('submitted');
+         
+        let data = this.state.text.toUpperCase();
 
         this.props.handleSubmit(data);
 
         console.log(data);
 
-
         this.setState({
-            input: "",
+            text: '',
             
         })
 
@@ -50,9 +37,10 @@ class NewPlayerInput extends Component {
                 underlineColorAndroid = "transparent"
                 placeholder = "Name"
                 placeholderTextColor = "#9a73ef"
-               //  value = {this.props.input}
                 autoCapitalize = "none"
-                onChangeText = {this.handleName}/>
+                onChangeText={(text) => this.setState({text})}
+
+                />
              
              {/* <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
