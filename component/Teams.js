@@ -3,6 +3,24 @@ import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-nativ
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+}
 
 
 class List extends Component {
@@ -20,6 +38,7 @@ class List extends Component {
     keyExtractor(item, index) {
         return `${index}`;
     }
+
 
     
 
@@ -40,10 +59,12 @@ class List extends Component {
     }
 
     render() {
+        let randomArray = shuffle(this.props.players);
+
         return (
             <>
             <FlatList
-                data={this.props.players}
+                data= {randomArray}
                 renderItem={this.renderItem}
                 keyExtractor={this.keyExtractor}
             />
