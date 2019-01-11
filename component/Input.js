@@ -37,10 +37,10 @@ class NewPlayerInput extends Component {
         console.log(data);
 
 
-      //   this.setState({
-      //       input: " ",
+        this.setState({
+            input: "",
             
-      //   })
+        })
 
     }
     render() {

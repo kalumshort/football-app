@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+
 
 class List extends Component {
     constructor(props){
@@ -29,6 +32,7 @@ class List extends Component {
                         <>
                             <Text style={styles.buttonText}>Name: {item.name}</Text>
                             {/* <Text style={styles.buttonText}>Rating: {item.rating}</Text> */}
+                            <Icon name="close"></Icon>
                         </>
                     </TouchableHighlight>
                 </View>
