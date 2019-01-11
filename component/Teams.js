@@ -43,10 +43,7 @@ class List extends Component {
     
 
     renderItem({item}) {
-        const handlePress = () => {
-        this.props.onItemPress(item);
-        }
-            return(
+        return(
                 <View style={styles.listItem}>
                     <TouchableHighlight  style={styles.listButton}>
                         <>
@@ -64,7 +61,7 @@ class List extends Component {
         return (
             <>
             <FlatList
-                data= {randomArray}
+                data= { randomArray }
                 renderItem={this.renderItem}
                 keyExtractor={this.keyExtractor}
             />
