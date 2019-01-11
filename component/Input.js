@@ -64,7 +64,7 @@ class NewPlayerInput extends Component {
              <TouchableOpacity
                 style = {styles.submitButton}
                 onPress = { this.handleSubmit  }>
-                <Text style = {styles.submitButtonText}> Submit </Text>
+                <Text style = {styles.submitButtonText}> Add Player </Text>
              </TouchableOpacity>
           </View>
        )
@@ -89,6 +89,7 @@ class NewPlayerInput extends Component {
        height: 40,
     },
     submitButtonText:{
-       color: 'white'
+       color: 'white',
+       textAlign: 'center',
     }
  })

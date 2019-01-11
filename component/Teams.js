@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -47,7 +49,7 @@ class List extends Component {
                 <View style={styles.listItem}>
                     <TouchableHighlight  style={styles.listButton}>
                         <>
-                            <Text style={styles.buttonText}>Name: {item.name}</Text>
+                            <Text style={styles.buttonText}>{item.name}</Text>
                             {/* <Text style={styles.buttonText}>Rating: {item.rating}</Text> */}
                         </>
                     </TouchableHighlight>
@@ -59,20 +61,22 @@ class List extends Component {
         let randomArray = shuffle(this.props.players);
 
         return (
-            <>
+            <View style={styles.container}>
                 <Text style={styles.TeamText}>Team 1</Text>
                 <FlatList
+                    style={styles.FlatList}
                     data= { randomArray.slice(0,5) }
                     renderItem={this.renderItem}
                     keyExtractor={this.keyExtractor}
                 />
                 <Text style={styles.TeamText}>Team 2</Text>
                 <FlatList
+                    style={styles.FlatList}
                     data= { randomArray.slice(5,10) }
                     renderItem={this.renderItem}
                     keyExtractor={this.keyExtractor}
                 />
-            </>
+            </View>
 
         );
     }
@@ -80,19 +84,29 @@ class List extends Component {
 export default List;
 
 const styles = StyleSheet.create({
+    container: {
+    },
+    FlatList: {
+
+    },
     listItem:{
         flex: 1,
         alignItems: 'center',
     },
     listButton:{
-        flexDirection: 'row',
+        // flexDirection: 'row',
         padding: 10,
-        backgroundColor: 'lightblue',
+        backgroundColor: 'grey',
         width: 300,
         margin:5,
         justifyContent: 'space-between',
+
+
     },
     buttonText: {
+        color: 'white',
+        fontWeight: '600',
+        textAlign: 'center',
 
     },
     TeamText: {
@@ -100,5 +114,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderStyle: 'solid',
         borderColor: 'lime',
+        borderRadius: 20,
+        backgroundColor: 'lime',
+        margin: 10,
+        
     },
 })
