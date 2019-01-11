@@ -64,10 +64,11 @@ const styles = StyleSheet.create({
     listButton:{
         flexDirection: 'row',
         padding: 10,
-        backgroundColor: 'lightblue',
+        backgroundColor: 'aqua',
         width: 300,
         margin:5,
         justifyContent: 'space-between',
+        borderRadius: 10,
     },
     buttonText: {
         textAlign: 'center',
@@ -77,5 +78,6 @@ const styles = StyleSheet.create({
     icon: {
         fontSize: 22,
         marginRight: 8,
+        color: 'white',
     },
 })
