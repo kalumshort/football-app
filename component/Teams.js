@@ -61,7 +61,12 @@ class List extends Component {
         return (
             <>
             <FlatList
-                data= { randomArray }
+                data= { randomArray.slice(0,5) }
+                renderItem={this.renderItem}
+                keyExtractor={this.keyExtractor}
+            />
+            <FlatList
+                data= { randomArray.slice(5,10) }
                 renderItem={this.renderItem}
                 keyExtractor={this.keyExtractor}
             />
