@@ -10,7 +10,7 @@ class HomeScreen extends Component {
         this.onPressTeams = this.onPressTeams.bind(this);
     }
     static navigationOptions = {
-        title: 'Home',
+        title: 'Footaball Team Randomiser',
         headerStyle:{
             backgroundColor: 'lime'
         }

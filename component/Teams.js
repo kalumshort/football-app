@@ -60,16 +60,18 @@ class List extends Component {
 
         return (
             <>
-            <FlatList
-                data= { randomArray.slice(0,5) }
-                renderItem={this.renderItem}
-                keyExtractor={this.keyExtractor}
-            />
-            <FlatList
-                data= { randomArray.slice(5,10) }
-                renderItem={this.renderItem}
-                keyExtractor={this.keyExtractor}
-            />
+                <Text style={styles.TeamText}>Team 1</Text>
+                <FlatList
+                    data= { randomArray.slice(0,5) }
+                    renderItem={this.renderItem}
+                    keyExtractor={this.keyExtractor}
+                />
+                <Text style={styles.TeamText}>Team 2</Text>
+                <FlatList
+                    data= { randomArray.slice(5,10) }
+                    renderItem={this.renderItem}
+                    keyExtractor={this.keyExtractor}
+                />
             </>
 
         );
@@ -92,5 +94,11 @@ const styles = StyleSheet.create({
     },
     buttonText: {
 
+    },
+    TeamText: {
+        textAlign: 'center',
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor: 'lime',
     },
 })
