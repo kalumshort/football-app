@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+// importing all the react native components needed for this page
 import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
-
+// importing the icons to be used on this page
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -11,36 +12,34 @@ class List extends Component {
     this.renderItem = this.renderItem.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     }
-
+    // keyExtractor thats needed to create a key for the flatlist
     keyExtractor(item, index) {
         return `${index}`;
     }
-
-    handleDelete = () => {
+    // handle delete function that removes the item using its id
+    handleDelete = (item) => {
         console.log('deleted');
-        console.log(this.props.item.id);
+        console.log(players.id);
 
         // this.props.handleDelete(this.props.item.id)
 
     }
-
+    //rendering out each item that has been added to the state
     renderItem({item}) {
-        const handlePress = () => {
-        this.props.onItemPress(item);
-        }
-            return(
+         return(
                 <View style={styles.listItem}>
                     <TouchableHighlight  style={styles.listButton}>
                         <>
                             <Text style={styles.buttonText}>{item.name}</Text>
                             {/* <Text style={styles.buttonText}>Rating: {item.rating}</Text> */}
-                            <Icon style={styles.icon} onPress={ this.handleDelete } name="close"></Icon>
+                            <Icon style={styles.icon} onPress={ this.handleDelete} name="close"></Icon>
                         </>
                     </TouchableHighlight>
                 </View>
         )
     }
 
+    // using flatlist you can easily render out all all items inside an array 
     render() {
         return (
             <>
@@ -56,6 +55,7 @@ class List extends Component {
 }
 export default List;
 
+//styling for this page
 const styles = StyleSheet.create({
     listItem:{
         flex: 1,
@@ -74,6 +74,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 17,
         marginLeft: 21,
+        color: 'white',
+        fontWeight: 'bold',
     },
     icon: {
         fontSize: 22,

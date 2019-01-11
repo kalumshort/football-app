@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableHighlight, FlatList, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+
+// importing the different react native components needed for this page 
+import {View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 
 class NewPlayerInput extends Component {
@@ -13,15 +15,17 @@ class NewPlayerInput extends Component {
       this.handleSubmit = this.handleSubmit.bind(this);
 
    }
-
-
+// When you press the add players button it sends a function carrying the data to be used else where
     handleSubmit = () => {
+      //  testing to see if the function has been called
         console.log('submitted');
-         
+
+         // creating a variable thats equal the the text being sbmitted and then making it uppercase
         let data = this.state.text.toUpperCase();
 
+         // handleSubmit is a prop handed down from the container
         this.props.handleSubmit(data);
-
+         // checking to see if im sending what i mean too
         console.log(data);
 
         this.setState({
@@ -30,6 +34,7 @@ class NewPlayerInput extends Component {
         })
 
     }
+   //  rendering out what is needed for this page
     render() {
        return (
           <View style = {styles.container}>
@@ -60,6 +65,7 @@ class NewPlayerInput extends Component {
  }
  export default NewPlayerInput
  
+//  styling for this page
  const styles = StyleSheet.create({
     container: {
        paddingTop: 23

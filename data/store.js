@@ -1,5 +1,6 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+// creating a global store to be used by redux
+
+import { createStore } from 'redux';
 import reducer from './reducer';
 import initialState from './initial';
 

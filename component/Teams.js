@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-
+// A function that takes an array and randomly distributes the items inside
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
   
@@ -30,20 +28,21 @@ class List extends Component {
     super(props)
     this.renderItem = this.renderItem.bind(this);
     }
-
+    // setting and styling the header
     static navigationOptions = {
         title: 'Teams',
         headerStyle:{
             backgroundColor: 'lime'
         }
     }
+    // key extractor creates a key thats needed for the FlatList to function
     keyExtractor(item, index) {
         return `${index}`;
     }
 
 
     
-
+    // rendering each item individually for the flatlist the display
     renderItem({item}) {
         return(
                 <View style={styles.listItem}>
@@ -58,11 +57,14 @@ class List extends Component {
     }
 
     render() {
+        // setting random array to be the array of my players but also running the shuffle function to mix up the order
         let randomArray = shuffle(this.props.players);
 
         return (
             <View style={styles.container}>
                 <Text style={styles.TeamText}>Team 1</Text>
+
+                {/* using two flatlist with both of them slicing the random array to split the array into two different team */}
                 <FlatList
                     style={styles.FlatList}
                     data= { randomArray.slice(0,5) }
@@ -83,6 +85,7 @@ class List extends Component {
 }
 export default List;
 
+// Styling for this page
 const styles = StyleSheet.create({
     container: {
     },

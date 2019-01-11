@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { View, StyleSheet, Text, TouchableHighlight, FlatList} from 'react-native';
+import { View, StyleSheet, Text, TouchableHighlight, } from 'react-native';
 
-
+// This is the home screen 
 class HomeScreen extends Component {
     constructor(props){
         super(props);
@@ -9,6 +9,7 @@ class HomeScreen extends Component {
         this.onPressPlayers = this.onPressPlayers.bind(this);
         this.onPressTeams = this.onPressTeams.bind(this);
     }
+    // setting and styling the header
     static navigationOptions = {
         title: '5-A-Side Randomiser',
         headerStyle:{
@@ -16,19 +17,18 @@ class HomeScreen extends Component {
         }
     }
 
-    componentDidMount() {
-
-    }
-
+    
+    // When you press the players button it will take you to the player page
     onPressPlayers() {
         this.props.navigation.navigate('Players');
 
     }
-
+    // When you press the teams button you will be directed to the teams page
     onPressTeams() {
         this.props.navigation.navigate('Teams');
     }
 
+    // rendering what will be on the page
     render(){
         // const players = this.props;
         return(
@@ -50,6 +50,7 @@ class HomeScreen extends Component {
 }
 export default HomeScreen;
 
+// Styling for this page
 const styles = StyleSheet.create ({
     home: {
         backgroundColor: 'white',

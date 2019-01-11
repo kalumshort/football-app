@@ -1,36 +1,7 @@
+// initialising the state to be a empty array called players
+
 const initialState = {
-    players: [
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-        {
-            name: 'player',
-        },
-    ],
+    players: [],
     
 }
 
