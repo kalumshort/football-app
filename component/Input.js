@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 // importing the different react native components needed for this page 
-import {View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import {View, Text, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
 
 
 class NewPlayerInput extends Component {
@@ -17,6 +17,8 @@ class NewPlayerInput extends Component {
    }
 // When you press the add players button it sends a function carrying the data to be used else where
     handleSubmit = () => {
+       //checking to see if there was an input 
+       if(this.state.text !== ''){
       //  testing to see if the function has been called
         console.log('submitted');
 
@@ -32,6 +34,17 @@ class NewPlayerInput extends Component {
             text: '',
             
         })
+      // if there was no input a alert will pop up saying to provide a alert
+      }else{
+         Alert.alert(
+            'No Name',
+            'Please Provide A Name',
+            [
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+          )
+      }
 
     }
    //  rendering out what is needed for this page
