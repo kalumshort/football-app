@@ -12,8 +12,8 @@ const mapStateToProps = ( state ) => {
 };
 
 const mapDispatchToProps = dispatch  => ({
-        handleSubmit: data => {
-            dispatch(addPlayer(data))
+        handleDelete: data => {
+            dispatch(deletePlayer(data))
     }
 });
 

@@ -5,3 +5,10 @@ export function addPlayer(data){
         payload: data,
     };
 }
+
+export function deletePlayer(data){
+    return{
+        type: 'deletePlayer',
+        payload: data,
+    };
+}

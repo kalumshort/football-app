@@ -18,6 +18,13 @@ function reducer ( currentState, action ) {
                 },...currentState.players]
             }
         }
+        case 'deletePlayer': {
+            return {
+                ...currentState,
+                players: state.players.filter(player => player.id !== action.id),
+
+            }
+        }
         default: {
             return currentState;
         }

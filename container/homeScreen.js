@@ -7,11 +7,12 @@ class HomeScreen extends Component {
     constructor(props){
         super(props);
         this.onPressPlayers = this.onPressPlayers.bind(this);
+        this.onPressTeams = this.onPressTeams.bind(this);
     }
     static navigationOptions = {
         title: 'Home',
         headerStyle:{
-            backgroundColor: 'green'
+            backgroundColor: 'lime'
         }
     }
 
@@ -21,6 +22,9 @@ class HomeScreen extends Component {
     onPressPlayers() {
         this.props.navigation.navigate('Players');
 
+    }
+    onPressTeams() {
+        this.props.navigation.navigate('Teams');
     }
 
     render(){
@@ -32,7 +36,7 @@ class HomeScreen extends Component {
                     <TouchableHighlight style={styles.button} onPress={this.onPressPlayers}>
                         <Text style={styles.buttonText}>The Players</Text>
                     </TouchableHighlight>
-                    <TouchableHighlight style={styles.button}>
+                    <TouchableHighlight style={styles.button} onPress={this.onPressTeams}>
                         <Text style={styles.buttonText}>Create Teams</Text>
                     </TouchableHighlight>
                 </View>
@@ -46,7 +50,7 @@ export default HomeScreen;
 
 const styles = StyleSheet.create ({
     home: {
-        backgroundColor: 'grey',
+        backgroundColor: 'white',
         alignItems: 'center',
         flex: 1,
         justifyContent: 'center',
@@ -61,7 +65,7 @@ const styles = StyleSheet.create ({
         
     },
     button: {
-       backgroundColor: 'red',
+       backgroundColor: 'lime',
        width: 300,
        padding: 10,
        borderRadius: 15,

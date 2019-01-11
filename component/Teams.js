@@ -9,29 +9,19 @@ class List extends Component {
     constructor(props){
     super(props)
     this.renderItem = this.renderItem.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
     }
 
     static navigationOptions = {
-        title: 'List',
-        headerStyle: {
-            backgroundColor: 'black'
-            }
+        title: 'Teams',
+        headerStyle:{
+            backgroundColor: 'lime'
         }
-
+    }
     keyExtractor(item, index) {
         return `${index}`;
     }
 
-    handleDelete = () => {
-        console.log('deleted');
-        console.log(this.keyExtractor);
-
-        // this.props.handleDelete(data);
-        // this.props.handleDelete(this.props.player.id)
-
-        
-    }
+    
 
     renderItem({item}) {
         const handlePress = () => {
@@ -43,7 +33,6 @@ class List extends Component {
                         <>
                             <Text style={styles.buttonText}>Name: {item.name}</Text>
                             {/* <Text style={styles.buttonText}>Rating: {item.rating}</Text> */}
-                            <Icon onPress={ this.handleDelete } name="close"></Icon>
                         </>
                     </TouchableHighlight>
                 </View>

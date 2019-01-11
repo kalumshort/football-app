@@ -1,27 +1,20 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { View, StyleSheet, Text, TouchableHighlight, FlatList} from 'react-native';
+import Teams from '../component/Teams';
 
-class TeamScreen extends Component {
-    constructor(props){
-        super(props)
+
+
+const mapStateToProps = ( state ) => {
+    return {
+        players: state.players,
     }
+};
 
-    render(){
-        return(
-            <View style={styles.container}>
-                <Text>teams</Text>
-            </View>
-        );
-    }
+// const mapDispatchToProps = dispatch  => ({
+//         handleDelete: data => {
+//             dispatch(deletePlayer(data))
+//     }
+// });
 
-}
-
-export default TeamScreen;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1
-        
-    }
-})
+export default connect(mapStateToProps, null)(Teams);
